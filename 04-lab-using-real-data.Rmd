@@ -1,0 +1,68 @@
+---
+title: "Lab 04 - That all you got?  Pretty much mastered this stuff-ola"
+output: html_document
+---
+
+### Using real data -- weeeeeeeeeeee! Fun! 
+R includes a number of datasets that it is convenient to use for examples. You can get a description of what's available by typing
+```{r}
+data()
+```
+To access any of these datasets, you then type data(dataset) where dataset is the name of the
+dataset you wish to access. For example,
+```{r}
+data(trees)
+```
+Typing
+```{r}
+trees[1:5,]
+```
+gives us the first 5 rows of these data, and we can now see that the columns represent measurements
+of girth, height and volume of trees (actually cherry trees: see help(trees)) respectively. Now, if we want to work on the columns of these data, we can use the subscripting technique
+explained above: for example, trees[,2] gives all of the heights. 
+
+What is the average height of the trees in the trees dataset?
+```{r, echo=FALSE}
+data(trees)
+mean(trees$Height)
+```
+
+
+The $ allows you extract elements by name from a named list. For example
+```{r}
+x <- list(a=1, b=2, c=3)
+x$b
+```
+You can find the names of a list using names()
+```{r}
+names(x)
+```
+This is a basic extraction operator. You can view the corresponding help page by typing ?Extract in R.
+```{marginfigure}
+PLEASE: make sure we talk about the risk/disadvantage of attaching data!
+```
+
+This is a bit tedious however, and it would be easier if we could refer to the heights more explicitly. We can achieve this by attaching to the trees dataset:
+```{r}
+attach(trees)
+```
+Effectively, this makes the contents of trees a directory, and if we type the name of an object, R
+will look inside this directory to find it. Since Height is the name of one of the columns of trees, R now recognizes this object when we type the name. Hence, for example,
+```{r}
+mean(Height)
+mean(trees[,2])
+```
+are synonymous, while it is easier to remember exactly what calculation is being performed by
+the rst of these expressions. In actual fact, trees is an object called a dataframe, essentially a
+matrix with named columns (though a dataframe, unlike a matrix, may also include non-numerical
+variables, such as character names). Because of this, there is another equivalent syntax to extract, for example, the vector of heights:
+```{r}
+trees$Height
+```
+which can also be used without having first attached to the dataset.
+
+### Exercises
+1. Attach to the dataset quakes and produce a statistical summary of the variables depth and
+mag.
+2. Attach to the dataset mtcars and find the mean weight and mean fuel consumption for
+vehicles in the dataset (type help(mtcars) for a description of the variables available).
