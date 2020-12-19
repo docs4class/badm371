@@ -193,9 +193,34 @@ you are right:
 (c) rep(c(1,2),c(4,4))
 (d) rep(1:4,4)
 (e) rep(1:4,rep(3,4))
-5. Use the rep function to dene simply the following vectors in R.
+5. Use the rep function to define simply the following vectors in R.
 (a) 6,6,6,6,6,6
 (b) 5,8,5,8,5,8,5,8
 (c) 5,5,5,5,8,8,8,8
+6. Use the internet -- whatever you want -- to learn what these arithmetic operators do:
+(a)	+	
+(b)	- 
+(c)	* 
+(d)	/	
+(e)	^ or **	
+(f)	%%
+(g)	%/%
+7. Use the internet -- whatever you want -- to learn what these logical operators do:
+(a)	<
+(b)	<=
+(c)	>= equal to
+(d)	==	
+(e)	!=
+(f)	!x
+(g)	x | y	
+(h)	x & y
+(i)	isTRUE(x)
+8. Use R to find the values of 
+(a) the square root of 7 cubed
+(b) 7 squared plus 7 divided by eight
+(c) the natural log of 11.7
+(d) the standard deviation of the numbers odd numbers between 1 and 100
+(e) (y^4x^2 + 2xy – y)/(x – 1) where x = 5 and y = 7 
+
 
 
